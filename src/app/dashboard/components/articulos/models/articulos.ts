@@ -10,6 +10,8 @@ export interface Articulos {
 
   precio?: number;
 
-  existencia?: string;
+  existencia?: number;
+
+  cantidad?: number;
 
 }
