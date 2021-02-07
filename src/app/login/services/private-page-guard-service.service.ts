@@ -15,7 +15,6 @@ export class PrivatePageGuardServiceService implements CanActivate {
     if (!this.authService.isLogged()) {
       this.router.navigate(['/login']);
     }
-    console.log('estado ' + this.authService.isLogged());
     return this.authService.isLogged();
   }
 

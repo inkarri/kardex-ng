@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.authService.login(this.mombreUsuario, this.clave)
       .subscribe(response => {
-        console.log('TOKEN: ' + response.headers.get('Authorization'));
         localStorage.setItem('token', response.headers.get('Authorization'));
+        localStorage.setItem('userName', this.mombreUsuario);
         this.router.navigate(['/dashboard/home']);
       }, err => {
         console.log('ususario o contraseña incorrecto');

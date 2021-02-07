@@ -11,6 +11,7 @@ export class AppComponent {
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName');
     localStorage.clear();
   }
 

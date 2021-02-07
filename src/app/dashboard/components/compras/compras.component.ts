@@ -5,6 +5,8 @@ import {ComprasConstant} from './constans/compras.constant';
 import {ToastrService} from 'ngx-toastr';
 import {NgxSpinnerService} from 'ngx-spinner';
 import {TipoPago} from './models/tipoPago';
+import {Pedido} from './models/pedido';
+import {DetallePedido} from './models/detallePedido';
 
 @Component({
   selector: 'app-compras',
@@ -41,7 +43,45 @@ export class ComprasComponent implements OnInit {
     }
   }
 
-  comprar() {
-
+  comprar(): void {
+    try {
+      this.vlidarCantidadIngresada();
+      this.loading.show();
+      this.cmprasService.comprarArticulos(this.crearParametroPedido()).subscribe(() => {
+        this.articulosSeleccionados = [];
+        this.messageService.info(this.titles.registro);
+        this.cmprasService.obtenerArticulosConExistencia().subscribe(data => {
+          this.articulos = data;
+          this.loading.hide();
+        });
+      });
+    } catch (e) {
+      this.messageService.error(e.message);
+    }
   }
+
+  private vlidarCantidadIngresada(): void {
+    for (const articulo of this.articulosSeleccionados) {
+      if (!articulo.cantidad  || articulo.cantidad <= 0) {
+        throw new Error(this.titles.sinCantdad);
+      }
+    }
+  }
+
+  crearParametroPedido(): Pedido {
+    const detallePeddo: DetallePedido[] = [];
+    this.articulosSeleccionados.forEach(articulo => {
+      detallePeddo.push({
+        articuloPk: articulo.articuloPk,
+        cantidad: articulo.cantidad,
+        precio: articulo.precio,
+        existencia: articulo.existencia
+      });
+    });
+    return {
+      tipoPagoPk: this.tipoPagoSeleccionado.tipoPagoPk,
+      detallePedido: detallePeddo
+    };
+  }
+
 }

@@ -18,6 +18,7 @@ export const ComprasConstant = {
     articulosCompra: 'Artículos seleccionados para la compra',
     compraLabel: 'Comprar',
     registro: 'Compra realizada exitosamente.',
-    sinExistencia: 'Este artículo no posee la cantidad que desea comprar.'
+    sinExistencia: 'Este artículo no posee la cantidad que desea comprar.',
+    sinCantdad: 'Debe ingresar cantidades válidas en todos los articulos para realizar la compra.'
   }
 };
