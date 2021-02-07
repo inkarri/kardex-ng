@@ -1,0 +1,29 @@
+/* basics */
+body {
+  background: #f8f7f2;
+  padding: 0 10%;
+  font: 100%/1.5 'Kalam', cursive;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1;
+  padding: 10px;
+  color: #251b19;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+  color: #251b19;
+  font-size: 1.2em;
+
+  a {
+    color: #e56633;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+

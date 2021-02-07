@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="logo">
+    <i class="fa fa-child"></i>
+    <span>Hulk Store</span>
+  </div>
+  <i class="nav-trigger fa fa-bars fa-lg" style="top: 40%;"></i>
+</div>
+<div class="side-nav">
+  <div class="logo">
+    <i class="fa fa-child"></i>
+    <span>Hulk Store</span>
+  </div>
+  <nav>
+    <ul>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/home']">
+          <span>
+            <i class="fa fa-home"></i>
+          </span>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/articulos']">
+          <span>
+            <i class="fa fa-calculator"></i>
+          </span>
+          <span>Articulos</span>
+        </a>
+      </li>
+      <li [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/compras']">
+          <span>
+            <i class="fa fa-book"></i>
+          </span>
+          <span>Compras</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
