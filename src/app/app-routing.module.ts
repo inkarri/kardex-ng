@@ -6,6 +6,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HomeComponent} from './dashboard/components/home/home.component';
 import {ArticulosComponent} from './dashboard/components/articulos/articulos.component';
 import {ComprasComponent} from './dashboard/components/compras/compras.component';
+import {ReporteComponent} from './dashboard/components/reporte/reporte.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
     children: [
       {path: 'home', component: HomeComponent},
       {path: 'articulos', component: ArticulosComponent},
-      {path: 'compras', component: ComprasComponent}
+      {path: 'compras', component: ComprasComponent},
+      {path: 'reporte', component: ReporteComponent}
     ]
   }
 ];

@@ -4,6 +4,7 @@ import {DashboardComponent} from './dashboard.component';
 import {RouterModule} from '@angular/router';
 import {ArticulosModule} from './components/articulos/articulos.module';
 import {ComprasModule} from './components/compras/compras.module';
+import {ReporteModule} from './components/reporte/reporte.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import {ComprasModule} from './components/compras/compras.module';
     CommonModule,
     RouterModule,
     ArticulosModule,
-    ComprasModule
+    ComprasModule,
+    ReporteModule
   ]
 })
 export class DashboardModule { }
